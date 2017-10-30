@@ -2,12 +2,21 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import Resource from 'vue-resource'
-// // vuex
-import store from './store/store'
 import axios from 'axios'
+import store from './store'
+
+import router from './router'
+// 引入mint
+import { Swipe, SwipeItem } from 'mint-ui';
+import 'mint-ui/lib/style.css'
+ // vuex
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 Vue.prototype.$http = axios
+
 
 Vue.config.productionTip = false
 

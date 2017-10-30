@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-//页面的一些路由配置
-import Homepage from '@/page/Homepage'
-import Classify from '@/page/Classify'
-import Cart from '@/page/Cart'
-import Mine from '@/page/Mine'
+// import Homepage from '@/page/Homepage'
+// import Classify from '@/page/Classify'
+// import Cart from '@/page/Cart'
+// import Mine from '@/page/Mine'
+const Homepage = resolve => require(['@/page/Homepage.vue'],resolve)
+const Classify = resolve => require(['@/page/Classify.vue'],resolve)
+const Cart = resolve => require(['@/page/Cart.vue'],resolve)
+const Mine = resolve => require(['@/page/Mine.vue'],resolve)
 
 Vue.use(Router)
 
