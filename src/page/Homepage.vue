@@ -43,8 +43,15 @@
       </ul>
     </div>
     <div class="homeMainList">
-      <ul>
-        <li></li>
+      <ul v-for="(item,index) in classifyList" :key="item.classify_id" v-if="index<3">
+        <h4>—— {{item.classify_name+"精选"}} ——</h4>
+        <li v-for="(it,ind) in product" v-if="ind<5">
+          <img :src="it.imgs">
+          <p>{{it.name}}</p>
+          <p class="introduce">{{it.introduce}}</p>
+          <span>{{"￥"+it.price}}</span>
+        </li>
+        <router-link to="/classify">全部{{item.classify_name}} ></router-link>
       </ul>
     </div>
     <foot></foot>
@@ -55,6 +62,14 @@ import foot from "@/components/Foot";
 export default {
   components: {
     foot
+  },
+  computed: {
+    classifyList () {
+      return this.$store.state.classify
+    },
+    product () {
+      return this.$store.state.product
+    }
   },
   methods: {}
 };
@@ -144,6 +159,53 @@ input[type="text"] {
   display: block;
   font-size: 12px;
   color:#494949;
+}
+.homeMainList{
+  position:absolute;
+  top:22rem;
+  margin-bottom:3rem;
+}
+.homeMainList ul:after{
+  display:block;
+  clear:both;
+  content: ''
+}
+.homeMainList ul{
+  border-bottom:8px solid #ddd;
+  position:relative;
+  padding-bottom:2rem;
+}
+.homeMainList ul>h4{
+  text-align:center;
+  width:100%;
+  color:#222;
+}
+.homeMainList li{
+  float:left;
+  list-style:none;
+  margin:0.3rem 0.45rem;
+  font-size:13px;
+  color:#232323;
+}
+.homeMainList li>img {
+  width:173px;
+  height:186px;
+}
+.homeMainList ul>a{
+  position:absolute;
+  bottom:0.5rem;
+  left:8rem;
+  text-align:center;
+  text-decoration:none;
+  line-height:1.8rem;
+  width:8rem;
+  height:2rem;
+  border:1px solid #ddd;
+  color:#777
+}
+.introduce{
+  font-size:12px;
+  color:#777;
 }
 </style>
 
