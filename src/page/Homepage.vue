@@ -4,7 +4,7 @@
       <img src="./homeImg/logo@2x.png">
       <input type="text" placeholder="天蝎座鲜花">
       <span class="searchbq"></span>
-      <span class="denglu">登录</span>
+      <router-link class="denglu" to="/denglu">登录</router-link>
     </div>
     <div class="bannerlb">
       <mt-swipe :auto="4000">
@@ -191,6 +191,7 @@ input[type="text"] {
   color: #494949;
   font-size: 13px;
   margin-left: 1rem;
+  text-decoration: none;
 }
 .smallBanner {
   width: 100%;

@@ -3,7 +3,7 @@
     <div class="mineHead">
       <span class="goback" @click="goback"><</span>
       <p>Hi,欢迎来到花礼网</p>
-      <router-link to="/">登录/注册</router-link>
+      <router-link to="/denglu">登录/注册</router-link>
     </div>
     <div class="mineBody">
       <ul class="shoppingDetails">
