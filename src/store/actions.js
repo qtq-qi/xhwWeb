@@ -7,5 +7,8 @@ export default {
     },
     setflowersWord ({commit},flowerwords){
         commit('SET_FLOWERSWORD',flowerwords)
+    },
+    setUserInfo ({commit},userInfo){
+        commit('SET_USERINFO',userInfo)
     }
 }

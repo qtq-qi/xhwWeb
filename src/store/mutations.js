@@ -7,5 +7,8 @@ export default {
     },
     SET_FLOWERSWORD (state,data) {
         state.flowerwords = data
+    },
+    SET_USERINFO (state,data) {
+        state.userInfo = data
     }
 }

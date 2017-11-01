@@ -1,6 +1,6 @@
 <template>
   <div class="denglu">
-    <headgray headerTitle="购物车"></headgray>
+    <headgray headerTitle="会员登录"></headgray>
     <div class="gotophone">
         <router-link to="/phonedenglu">使用手机验证登录</router-link>
     </div> 
@@ -49,13 +49,26 @@ export default {
   },
   methods: {
     yanzhen() {
-      this.$http.get("http://localhost:8081/user").then(res => {
-        if (res.data.length === 0) {
-          this.$msg("提示", "请先注册");
-        } else {
-          for (var i = 0; i < res.data.length; i++) {}
-        }
-      });
+      if (this.phonenumber === "" || this.userpsd === "") {
+        this.$msg("提示", "请输入完整登录信息");
+      } else {
+        this.$http.get("http://localhost:8081/user").then(res => {
+          if (res.data.length === 0) {
+            this.$msg("提示", "请先注册");
+            this.$router.push('/zhuce')
+          } else {
+            for (var i = 0; i < res.data.length; i++) {
+              if(res.data[i].phone===this.phonenumber&& res.data[i].psd===this.userpsd){
+                this.$store.dispatch('setUserInfo',res.data[i])
+                this.$msg('提示','登录成功')
+                this.$router.push('/home')
+              } else if(res.data[i].phone===this.phonenumber&&res.data[i]!==this.userpsd){
+                 this.$msg('提示','密码或用户名不正确')
+              }
+            }
+          }
+        });
+      }
     }
   }
 };

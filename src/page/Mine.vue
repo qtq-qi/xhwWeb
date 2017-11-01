@@ -2,8 +2,15 @@
   <div class="mine">
     <div class="mineHead">
       <span class="goback" @click="goback"><</span>
-      <p>Hi,欢迎来到花礼网</p>
-      <router-link to="/denglu">登录/注册</router-link>
+      <div class="noUser" :class="{active:isShowUserInfo}">
+        <p>Hi,欢迎来到花礼网</p>
+        <router-link to="/denglu">登录/注册</router-link>
+      </div>
+      <div class="haveUser" :class="{active:!isShowUserInfo}">
+        <img src="./mineImg/head_sculpture.png">
+        <span>{{userInfo.phone}}</span>
+        <h4><span><img src="./mineImg/iconDiamond@2x.png"></span>普通会员</h4>
+      </div>
     </div>
     <div class="mineBody">
       <ul class="shoppingDetails">
@@ -71,7 +78,14 @@
 import foot from '@/components/Foot'
 export default {
   created () {
-
+    if(this.$store.state.userInfo.length!==0){
+      this.isShowUserInfo = true
+    }
+  },
+  data(){
+    return {
+      isShowUserInfo:false
+    }
   },
   components: {
     foot
@@ -79,6 +93,11 @@ export default {
   methods: {
     goback () {
       this.$router.go(-1)
+    }
+  },
+  computed: {
+    userInfo () {
+      return this.$store.state.userInfo
     }
   }
 }
@@ -92,6 +111,9 @@ export default {
   position: relative;
   text-align: center;
   padding:0.1px;
+}
+.mineHead .active{
+  display: none;
 }
 .mineHead .goback{
   color:#fff;
