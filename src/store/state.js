@@ -1,4 +1,6 @@
 export default {
     product: [],
-    classify: []
+    classify: [],
+    flowerwords: [],
+    userInfo: []
 }

@@ -4,5 +4,8 @@ export default {
     },
     setProducts({commit},productsArr){
         commit('SET_PRODUCTS',productsArr)
+    },
+    setflowersWord ({commit},flowerwords){
+        commit('SET_FLOWERSWORD',flowerwords)
     }
 }

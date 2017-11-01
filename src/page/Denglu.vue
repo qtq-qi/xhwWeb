@@ -1,17 +1,19 @@
 <template>
   <div class="denglu">
-    <headgray></headgray>
+    <headgray headerTitle="购物车"></headgray>
     <div class="gotophone">
         <router-link to="/phonedenglu">使用手机验证登录</router-link>
     </div> 
-    <input type="number" placeholder="请输入邮箱/手机号码">
-    <input type="password" placeholder="请输入登录密码">
+    <input type="number" placeholder="请输入邮箱/手机号码" v-model="phonenumber">
+    <input type="password" placeholder="请输入登录密码" v-model="userpsd">
     <input type="checkbox"><span>一个月内免登录</span>
-    <span class="dengluBtn">登录</span>
+    <span class="dengluBtn" @click="yanzhen">登录</span>
     <div class="fastGallery">
         <div class="fastzhuce">
-            <span></span>
-            快速注册
+            <router-link to="/zhuce">
+               <span></span>
+                快速注册 
+            </router-link>   
         </div>
         <div class="fastpsd">
             <span></span>
@@ -34,113 +36,138 @@
   </div>
 </template>
 <script>
-import headgray from '@/components/HeadGray'
+import headgray from "@/components/HeadGray";
 export default {
   components: {
-      headgray
+    headgray
+  },
+  data() {
+    return {
+      phonenumber: "",
+      userpsd: ""
+    };
+  },
+  methods: {
+    yanzhen() {
+      this.$http.get("http://localhost:8081/user").then(res => {
+        if (res.data.length === 0) {
+          this.$msg("提示", "请先注册");
+        } else {
+          for (var i = 0; i < res.data.length; i++) {}
+        }
+      });
+    }
   }
-}
+};
 </script>
 <style>
-.denglu{
-    margin-left:0;
-    width:100%;
+.denglu {
+  margin-left: 0;
+  width: 100%;
 }
-.denglu .gotophone:after{
-    display: block;
-    clear: both;
-    content: "";
+.denglu .gotophone:after {
+  display: block;
+  clear: both;
+  content: "";
 }
-.denglu .gotophone>a{
-    color:#f60;
-    text-decoration: none;
-    float: right;
-    margin:1rem;
+.denglu .gotophone > a {
+  color: #f60;
+  text-decoration: none;
+  float: right;
+  margin: 1rem;
 }
-input,.dengluBtn{
-    width:90%;
-    height:2.5rem;
-    margin:0.7rem;
-    outline: none;
-    font-size: 14px;
+input,
+.dengluBtn {
+  width: 90%;
+  height: 2.5rem;
+  margin: 0.7rem;
+  outline: none;
+  font-size: 14px;
 }
-input[type="number"],input[type="password"]{
-    background:#F9F9F9;
-    border:1px solid #e2e2e2;
-    padding-left:1rem;
+input[type="number"],
+input[type="password"] {
+  background: #f9f9f9;
+  border: 1px solid #e2e2e2;
+  padding-left: 1rem;
 }
-input[type="checkbox"]{
-    width:1.1rem;
-    height:1rem;
-    vertical-align: middle;
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1rem;
+  vertical-align: middle;
 }
-.denglu .dengluBtn{
-    display: inline-block;
-    background: #ff6600;
-    color:#fff;
-    text-align: center;
-    line-height: 2.5rem;
-    border-radius: 5px;
+.denglu .dengluBtn {
+  display: inline-block;
+  background: #ff6600;
+  color: #fff;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 5px;
 }
-.fastGallery{
-    height:2.5rem;
-    font-size: 13px;
-    color:#666;
+.fastGallery {
+  height: 2.5rem;
+  font-size: 13px;
+  color: #666;
+  padding: 0 1.5rem;
 }
-.fastzhuce{
-    float: left;
+.fastzhuce a {
+  color: #666;
+  text-decoration: none;
 }
-.fastzhuce span,.fastpsd span{
-    display: inline-block;
-    width:1rem;
-    height:1rem;
-    vertical-align: middle;
+.fastzhuce {
+  float: left;
 }
-.fastzhuce span{
-    background:url('./dengluImg/login_zc.png')no-repeat;
-    background-size: 1rem 1rem;
+.fastzhuce span,
+.fastpsd span {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
 }
-.fastpsd span{
-    background:url('./dengluImg/login_mm.png')no-repeat;
-    background-size: 1rem 1rem;
+.fastzhuce span {
+  background: url("./dengluImg/login_zc.png")no-repeat;
+  background-size: 1rem 1rem;
 }
-.fastpsd{
-    float: right;
+.fastpsd span {
+  background: url("./dengluImg/login_mm.png")no-repeat;
+  background-size: 1rem 1rem;
 }
-.others{
-    width:100%;
-    text-align: center;
-    color:#333;
-    font-weight: normal;
+.fastpsd {
+  float: right;
 }
-.others h4 span{
-    display: inline-block;
-    width:5.5rem;
-    border-bottom: 1px solid #ccc;
-    margin:0 0.5rem;
+.others {
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-weight: normal;
 }
-.other{
-    width:100%;
-    text-align: center;
-    margin-top:1rem;
+.others h4 span {
+  display: inline-block;
+  width: 5.5rem;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0.5rem;
 }
-.other li{
-    float: left;
-    list-style: none;
-    width:50%;
+.other {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
 }
-.other li span{
-    display: inline-block;
-    width:3rem;
-    height:3rem;
+.other li {
+  float: left;
+  list-style: none;
+  width: 50%;
 }
-.other .qq span{
-    background:url('./dengluImg/login_qq.png')no-repeat;
-    background-size: 3rem 3rem;
+.other li span {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
 }
-.other .zfb span{
-    background:url('./dengluImg/login_zfb1.png')no-repeat;
-    background-size: 3rem 3rem;
+.other .qq span {
+  background: url("./dengluImg/login_qq.png")no-repeat;
+  background-size: 3rem 3rem;
+}
+.other .zfb span {
+  background: url("./dengluImg/login_zfb1.png")no-repeat;
+  background-size: 3rem 3rem;
 }
 </style>
 

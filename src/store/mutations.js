@@ -4,5 +4,8 @@ export default {
     },
     SET_PRODUCTS (state,data) {
         state.product = data
+    },
+    SET_FLOWERSWORD (state,data) {
+        state.flowerwords = data
     }
 }

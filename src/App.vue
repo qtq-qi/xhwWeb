@@ -17,6 +17,10 @@ export default {
     .then(res =>{
       this.$store.dispatch('setProducts',res.data)
     })
+    this.$http.get('http://localhost:8081/flowersWord')
+    .then(res =>{
+      this.$store.dispatch('setflowersWord',res.data)
+    })
   }
 
 }

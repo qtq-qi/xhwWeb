@@ -17,6 +17,12 @@ const denglu = resolve => require(['@/page/Denglu.vue'],resolve)
 //手机登录
 const phonedenglu = resolve => require(['@/page/Phonedenglu.vue'],resolve)
 Vue.use(Router)
+//注册
+const Zhuce = resolve => require(['@/page/Zhuce.vue'],resolve)
+Vue.use(Router)
+//花语大全
+const Flowersword = resolve => require(['@/page/Flowersword.vue'],resolve)
+Vue.use(Router)
 
 export default new Router({
   routes: [
@@ -54,6 +60,16 @@ export default new Router({
       path: '/phonedenglu',
       name: 'phonedenglu',
       component: phonedenglu
-    }
+    },
+    {
+      path: '/flowersword',
+      name: 'flowersword',
+      component: Flowersword
+    },
+    {
+      path: '/zhuce',
+      name: 'zhuce',
+      component: Zhuce
+    },
   ]
 })

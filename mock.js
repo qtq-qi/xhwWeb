@@ -122,7 +122,22 @@ var data = Mock.mock({
         "name": "@cword(4,6)",
         "introduce": "@ctitle(10,13)",
         "price|50-300":100 
-    }]
+    }],
+    "flowersWord": [{
+        "title": "@ctitle(4)",
+        "classify|30": [{
+            "classify_id|+1":4000,
+            "ckassufy_name": "@cword(4,5)" ,
+            "title": "@ctitle(12,20)"
+        }],
+        "flowersword|100": [{
+            "classify_id|4000-4029":100,
+            "imgs": "@image(355x355,@color,@ctitle)",
+            "mains": "@ctitle(35,45)"
+        }],
+       
+    }],
+    "user": []
     // "hotList": [{
     //     "classify_name": "@ctitle(5)",
     //     "classify_id": 1,

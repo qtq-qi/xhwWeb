@@ -89,7 +89,7 @@
     <div class="aboutUs">
       <ul>
         <li>
-          <router-link to="/">花语大全</router-link>
+          <router-link to="/flowersword">花语大全</router-link>
         </li>
         <li>
           <router-link to="/">查单</router-link>
@@ -102,10 +102,10 @@
     <div class="service">
       <ul>
         <li>
-          <span></span>
+          <a href="http://www.hua.com/gomobile/" target="_blank"><span></span></a>
         </li>
          <li>
-          <span></span>
+           <a href="https://www.sobot.com/chat/h5/index.html?sysNum=d22b0bfa87fd42258397365c95bc5e08&partnerId=0" target="_blank"><span></span></a>
         </li>
       </ul>
     </div>
