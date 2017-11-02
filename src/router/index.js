@@ -8,6 +8,8 @@ import Router from 'vue-router'
 const Homepage = resolve => require(['@/page/Homepage.vue'],resolve)
 //闪送超市
 const Classify = resolve => require(['@/page/Classify.vue'],resolve)
+//商品页
+const Products = resolve => require(['@/page/Products.vue'],resolve)
 //购物车
 const Cart = resolve => require(['@/page/Cart.vue'],resolve)
 //我的页
@@ -70,6 +72,11 @@ export default new Router({
       path: '/zhuce',
       name: 'zhuce',
       component: Zhuce
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: Products
     },
   ]
 })

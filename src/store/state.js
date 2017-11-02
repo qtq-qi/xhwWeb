@@ -2,5 +2,7 @@ export default {
     product: [],
     classify: [],
     flowerwords: [],
-    userInfo: []
+    userInfo: [],
+    isActive: 1,
+    productsList: []
 }

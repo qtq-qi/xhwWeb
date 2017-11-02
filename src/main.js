@@ -7,11 +7,12 @@ import store from './store'
 
 import router from './router'
 // 引入mint
-import { Swipe, SwipeItem, MessageBox } from 'mint-ui';
+import { Swipe, SwipeItem, MessageBox, Lazyload  } from 'mint-ui';
 import 'mint-ui/lib/style.css'
  // vuex
 import Vuex from 'vuex'
 Vue.use(Vuex)
+Vue.use(Lazyload)
 Vue.prototype.$msg = MessageBox
 
 Vue.component(Swipe.name, Swipe);

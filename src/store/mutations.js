@@ -10,5 +10,11 @@ export default {
     },
     SET_USERINFO (state,data) {
         state.userInfo = data
+    },
+    SET_ACTIVE (state,data) {
+        state.isActive = data+1
+    },
+    SET_SMCLASSIFY (state,data) {
+        state.productsList = data
     }
 }

@@ -247,6 +247,30 @@ export default {
 .mineBody div:last-of-type{
   background:#F0EFED;
 }
+.haveUser{
+  position: relative;
+  top:2.5rem;
+  left:-3rem
+}
+.haveUser>img:first-of-type{
+  width:4rem; 
+}
+.haveUser h4 img:last-of-type{
+   width:1rem;
+   margin-right:0.5rem;
+}
+.haveUser>span{
+  position: absolute;
+  top:1rem;
+  left:14.5rem
+}
+.haveUser>h4{
+  font-weight: normal;
+  position: absolute;
+  top:2.5rem;
+  left:14.5rem;
+  font-size: 13px;
+}
 </style>
 
 

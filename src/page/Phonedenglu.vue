@@ -4,17 +4,17 @@
       <router-link to="/denglu">会员账号登录</router-link>
       <input type="number" placeholder="请输入手机号码">
       <input type="number" placeholder="输入短信验证码">
-      <span class="getyzm">获取短信验证码</span>
+      <span class="getyzm1">获取短信验证码</span>
       <input type="number" placeholder="验证码">
       <img :src="yzmImg">
       <span @click="changeyzm">看不清，换一张</span>
       <span class="dengluBtn">登录</span>
       <div class="fastGallery">
-        <div class="fastpsd fastzhece2">
+        <router-link class="fastpsd fastzhece2" to="/zhuce">
             <span></span>
             快速注册
-        </div>
-    </div>
+        </router-link>
+      </div>
     <div class="others">
         <h4><span></span>其他方式登录<span></span></h4>
         <ul class="other">
@@ -73,7 +73,7 @@ export default {
 input[type="number"]:nth-of-type(2) {
   width: 45%;
 }
-.getyzm {
+.phonedenglu .getyzm1 {
   background: #ffad0d;
   display: inline-block;
   width: 41%;
@@ -104,13 +104,18 @@ input[type="number"]:nth-of-type(3) {
   line-height: 2.5rem;
   border-radius: 5px;
 }
-.phonedenglu .fastzhece2 span{
-    width:1rem;
-    height:1rem;
-    background:url('./dengluImg/login_zc.png')no-repeat;
-    background-size: 1rem 1rem;
+.phonedenglu .fastzhece2 span {
+  width: 1rem;
+  height: 1rem;
+  background: url("./dengluImg/login_zc.png")no-repeat;
+  vertical-align: top;
+  background-size: 1rem 1rem;
 }
-.fastzhece2{
-    margin-right:1.5rem;
+.fastzhece2 {
+  margin-right: 1.5rem;
+}
+.fastGallery a{
+  color:#777;
+  text-decoration: none;
 }
 </style>

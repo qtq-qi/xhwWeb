@@ -46,7 +46,7 @@
       <ul v-for="(item,index) in classifyList" :key="item.classify_id" v-if="index<3">
         <h4>—— {{item.classify_name+"精选"}} ——</h4>
         <li v-for="(it,ind) in product" :key="ind" v-if="ind<5">
-          <img :src="it.imgs">
+          <img v-lazy="it.imgs">
           <p>{{it.name}}</p>
           <p class="introduce">{{it.introduce}}</p>
           <span>{{"￥"+it.price}}</span>
@@ -259,6 +259,12 @@ input[type="text"] {
   width: 173px;
   height: 186px;
 }
+/* .homeMainList li > img[lazy=loading] {
+  width: 173px;
+  height: 186px;
+  background:url(./homeImg/loding.gif) center center no-repeat;
+  background-size: 40% 40%;
+} */
 .homeMainList ul > a {
   position: absolute;
   bottom: 0.5rem;
