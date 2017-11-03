@@ -14,6 +14,10 @@ const Products = resolve => require(['@/page/Products.vue'],resolve)
 const Cart = resolve => require(['@/page/Cart.vue'],resolve)
 //我的页
 const Mine = resolve => require(['@/page/Mine.vue'],resolve)
+//子页面
+const ChildPage = resolve => require(['@/page/ChildPage.vue'],resolve)
+//鲜花分类
+const FlowerClassify = resolve => require(['@/page/FlowerClassify.vue'],resolve)
 //会员登录
 const denglu = resolve => require(['@/page/Denglu.vue'],resolve)
 //手机登录
@@ -77,6 +81,16 @@ export default new Router({
       path: '/products',
       name: 'products',
       component: Products
+    },
+    {
+      path: '/childpage',
+      name: 'childpage',
+      component: ChildPage
+    },
+    {
+      path: '/flowerclassify',
+      name: 'flowerclassify',
+      component: FlowerClassify
     },
   ]
 })

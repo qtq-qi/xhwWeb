@@ -48,7 +48,7 @@ var data = Mock.mock({
                 {
                     "title": "颜色",
                     "productsClassify|7": [{
-                        "colors": "@color",
+                        "imgs": "@image(155x155,@color)",
                         "color_id|+1": 1000,
                         "smallClassify_name": "@ctitle(2,3)"
                     }],
@@ -207,6 +207,9 @@ var data = Mock.mock({
         "cake_id|1-14":100,
         "cake_id2|1-12":100,
         "productsClassify|0-16":100,
+        "salesVolume|0-100": 100,
+        "zhonghe|0-1500": 10000,
+        "payNum|0-100":100,
         "imgs": "@image(355x355,@color,@ctitle)",
         "name": "@cword(4,6)",
         "introduce": "@ctitle(10,13)",

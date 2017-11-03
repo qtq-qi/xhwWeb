@@ -20,7 +20,7 @@ export default {
         http.get('http://localhost:8081/products')
         .then(res =>{
             console.log(state)
-            console.log(its.smClassify_id)
+            console.log(its.useing_id)
             if(its.smClassify_id!==undefined){
                 console.log(state.state.isActive)
                 for(var i=0;i<res.data.length;i++){
@@ -29,6 +29,12 @@ export default {
                     }
                 }
                 state.commit('SET_SMCLASSIFY',arr)
+            } else if(its.useing_id!==undefined){
+                for(var i=0;i<res.data.length;i++){
+                    if(res.data[i].classify_id===state.state.isActive && res.data[i].useing_id===its.useing_id){
+                        arr.push(res.data[i])
+                    }
+                }
             }
         })
     }
