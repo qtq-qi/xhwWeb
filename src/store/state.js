@@ -4,5 +4,8 @@ export default {
     flowerwords: [],
     userInfo: [],
     isActive: 1,
-    productsList: []
+    productsList: [],
+    childProduct: {},
+    nowFlowersword: {},
+    carts: []
 }

@@ -198,22 +198,30 @@ var data = Mock.mock({
         }
     ],
     "products|1000-1500": [{
+        "products_id|+1":1,
         "classify_id|1-9": 50,
         "smclassify_id|0-48": 100,
         "useing_id|1-18": 100,
         "floweruse_id|1-14":100,
         "color_id|1000-1007":100,
         "flowersnumber|9-23":100,
+        "flowersword_id|4000-4029": 10000,
         "cake_id|1-14":100,
+        "evaluate":[],
         "cake_id2|1-12":100,
         "productsClassify|0-16":100,
         "salesVolume|0-100": 100,
         "zhonghe|0-1500": 10000,
         "payNum|0-100":100,
         "imgs": "@image(355x355,@color,@ctitle)",
+        "imgsList|4": [{
+            "imgs": "@image(355x355,@color,@ctitle)"
+        }],
         "name": "@cword(4,6)",
+        "packageWord":"@ctitle(15,20)",
         "introduce": "@ctitle(10,13)",
-        "price|50-300": 100
+        "price|50-300": 100,
+        "num":0
     }],
     "flowersWord": [{
         "title": "@ctitle(4)",
@@ -229,7 +237,8 @@ var data = Mock.mock({
         }],
 
     }],
-    "user": []
+    "user": [],
+    "carts": []
     // "hotList": [{
     //     "classify_name": "@ctitle(5)",
     //     "classify_id": 1,

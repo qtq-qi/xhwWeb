@@ -16,5 +16,30 @@ export default {
     },
     SET_SMCLASSIFY (state,data) {
         state.productsList = data
+    },
+    SET_CHILDPRODUCT (state,data) {
+        state.childProduct = data
+    },
+    SET_WORDS (state,data) {
+        state.nowFlowersword = data
+    },
+    SET_CART (state,data) {
+        if(state.carts.length===0){
+            state.carts.push(data)
+        } else {
+            var isdone = false
+            for(var i=0;i<state.carts.length;i++){
+                if(state.carts[i].products_id===data.products_id){
+                    data.num++
+                    var obj = data
+                    isdone = true
+                    state.carts[i] = obj
+                    break
+                }
+            }
+            if (!isdone) {
+                state.carts.push(data)
+            }
+        }
     }
 }

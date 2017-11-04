@@ -45,7 +45,7 @@
     <div class="homeMainList">
       <ul v-for="(item,index) in classifyList" :key="item.classify_id" v-if="index<3">
         <h4>—— {{item.classify_name+"精选"}} ——</h4>
-        <li v-for="(it,ind) in product" :key="ind" v-if="ind<5">
+        <li v-for="(it,ind) in product" :key="ind" v-if="ind<5" @click="getProducts(it)">
           <img v-lazy="it.imgs">
           <p>{{it.name}}</p>
           <p class="introduce">{{it.introduce}}</p>
@@ -138,6 +138,11 @@ export default {
   methods: {
     handleChange(index) {
       this.isActiveNum = index+1;
+    },
+    getProducts (item) {
+      console.log(item)
+      this.$store.dispatch('setChildProduct',item)
+      this.$router.push("/childpage")
     }
   }
 };

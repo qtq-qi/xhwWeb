@@ -42,7 +42,8 @@ export default {
   methods: {
     choiceProduct(item) {
       console.log(item)
-      // this.$router.push("/childpage")
+      this.$store.dispatch("setChildProduct",item)
+      this.$router.push("/childpage")
     },
     changeClassify(num) {
       this.isClassify = num
