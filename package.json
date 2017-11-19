@@ -1,8 +1,8 @@
 {
-  "name": "day02",
+  "name": "xhw",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "",
+  "author": "qtq <752947294@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
