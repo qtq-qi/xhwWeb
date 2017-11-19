@@ -7,5 +7,9 @@ export default {
     productsList: [],
     childProduct: {},
     nowFlowersword: {},
-    carts: []
+    carts: [],
+    isdone:false,
+    selectProduces: [],
+    history: [],
+    comments: []
 }

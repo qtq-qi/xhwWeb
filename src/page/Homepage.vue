@@ -142,6 +142,9 @@ export default {
     getProducts (item) {
       console.log(item)
       this.$store.dispatch('setChildProduct',item)
+      if(this.$store.state.userInfo.id !==undefined){
+        this.$store.dispatch('setHistory',item)
+      }
       this.$router.push("/childpage")
     }
   }

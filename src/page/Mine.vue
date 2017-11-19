@@ -139,6 +139,9 @@ export default {
   background:#fe6600;
   border-radius: 10px;
 }
+.mineBody{
+  margin-bottom:3rem;
+}
 .shoppingDetails:after{
   display: block;
   clear: both;
@@ -158,8 +161,8 @@ export default {
 .shoppingDetails span,.mineInfo li span{
   display: inline-block;
   width:2.3rem;
-  height:1.6rem;
-  margin-top:1.5rem;
+  height:2.3rem;
+  margin-top:5%;
 }
 .shoppingDetails li:first-of-type span{
   background:url('./mineImg/minebq1.png') no-repeat;
@@ -182,7 +185,6 @@ export default {
   width:25%;
   list-style: none;
   text-align: center;
-  padding-bottom: 1rem;
   border-bottom: 8px solid #eee;
   color:#666;
   font-size: 12px;

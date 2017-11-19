@@ -221,7 +221,8 @@ var data = Mock.mock({
         "packageWord":"@ctitle(15,20)",
         "introduce": "@ctitle(10,13)",
         "price|50-300": 100,
-        "num":0
+        "num":1,
+        "isSelect":true
     }],
     "flowersWord": [{
         "title": "@ctitle(4)",
@@ -238,7 +239,9 @@ var data = Mock.mock({
 
     }],
     "user": [],
-    "carts": []
+    "carts": [],
+    "historyList": [],
+    "comments": []
     // "hotList": [{
     //     "classify_name": "@ctitle(5)",
     //     "classify_id": 1,

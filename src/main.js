@@ -6,6 +6,7 @@ import axios from 'axios'
 import store from './store'
 
 import router from './router'
+// import Resource from 'vue-resource'
 // 引入mint
 import { Swipe, SwipeItem, MessageBox, Lazyload  } from 'mint-ui';
 import 'mint-ui/lib/style.css'
@@ -13,6 +14,7 @@ import 'mint-ui/lib/style.css'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 Vue.use(Lazyload)
+// Vue.use(Resource)
 Vue.prototype.$msg = MessageBox
 
 Vue.component(Swipe.name, Swipe);

@@ -12,7 +12,7 @@
       </div>
       <div class="childPrice">
         <p>
-          <span>{{childproduct.name+" - "+childproduct.introduce}}</span>
+          <span>{{childproduct.name+" - "+childproduct.introduces}}</span>
           <span class="star"></span>
           <span class="prices">{{"￥"+ childproduct.price}}</span>
         </p>
@@ -67,7 +67,7 @@
          <li>
           <span></span>
           <p>购物车</p>
-          <var>0</var>
+          <var>{{thisNum}}</var>
         </li>
       </ul>
       <span @click="addCart">加入购物车</span>
@@ -98,6 +98,15 @@ export default {
     words () {
       return this.$store.state.nowFlowersword
     },
+    userInfo () {
+      return this.$store.state.userInfo
+    },
+    thisNum () {
+      var thisnum = this.$store.state.carts.filter(item =>{
+        return item.user_id===this.userInfo.id
+      }).num
+      return thisnum
+    }
 
   },
   methods: {
@@ -117,7 +126,15 @@ export default {
      
     },
     addCart () {
-      this.$store.dispatch('setCart')
+      if(this.userInfo.id !== undefined){
+        this.$store.dispatch('setCart')
+      } else{
+        this.$msg('提示','请先登录')
+        .then(res =>{
+          this.$router.push('/denglu')
+        })
+        
+      }
     }
   }
 };
@@ -189,7 +206,7 @@ export default {
   font-size: 18px;
   line-height: 3rem;
 }
-.introduce{
+.introduces{
   width:100%;
   height:10rem;
   line-height: 1.2rem;

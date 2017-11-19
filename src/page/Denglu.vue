@@ -61,6 +61,7 @@ export default {
               if(res.data[i].phone===this.phonenumber&& res.data[i].psd===this.userpsd){
                 this.$store.dispatch('setUserInfo',res.data[i])
                 this.$msg('提示','登录成功')
+                this.$store.dispatch('getcarts')
                 this.$router.push('/home')
               } else if(res.data[i].phone===this.phonenumber&&res.data[i]!==this.userpsd){
                  this.$msg('提示','密码或用户名不正确')

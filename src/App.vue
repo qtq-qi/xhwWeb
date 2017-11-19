@@ -21,6 +21,10 @@ export default {
     .then(res =>{
       this.$store.dispatch('setflowersWord',res.data)
     })
+    // this.$http.get('http://localhost:8081/carts')
+    // .then(res =>{
+    //   this.$store.dispatch('setCarts',res.data)
+    // })
   }
 
 }

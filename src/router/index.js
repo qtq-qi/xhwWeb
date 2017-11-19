@@ -20,6 +20,8 @@ const ChildPage = resolve => require(['@/page/ChildPage.vue'],resolve)
 const FlowerClassify = resolve => require(['@/page/FlowerClassify.vue'],resolve)
 //客户评论
 const CommentPage = resolve => require(['@/page/CommentPage.vue'],resolve)
+//写评论
+const WriteComment = resolve => require(['@/page/WriteComment.vue'],resolve)
 //会员登录
 const denglu = resolve => require(['@/page/Denglu.vue'],resolve)
 //手机登录
@@ -98,6 +100,11 @@ export default new Router({
       path: '/comment',
       name: 'comment',
       component: CommentPage
+    },
+    {
+      path: '/writecomment',
+      name: 'writecomment',
+      component: WriteComment
     }
   ]
 })

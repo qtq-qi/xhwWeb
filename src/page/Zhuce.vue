@@ -67,11 +67,19 @@ export default {
           if (res.data.length === 0) {
             this.$store.dispatch('setUserInfo',userObj)
             this.$http.post('http://localhost:8081/user',userObj)
+            this.$msg('提示','注册成功')
+            .then(re =>{
+              this.$router.push('/')
+            })
           } else{
             for(var i=0;i<res.data.length;i++){
               if(res.data[i].phone!==this.userPhone){
                 this.$store.dispatch('setUserInfo',userObj)
                 this.$http.post('http://localhost:8081/user',userObj)
+                this.$msg('提示','注册成功')
+                .then(re =>{
+                  this.$router.push('/')
+                })
               }
             }
           }

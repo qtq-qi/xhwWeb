@@ -109,13 +109,13 @@ export default {
 .smclassifyBox {
   position: absolute;
   top: 3rem;
-  right: 0.5rem;
   padding-top: 0.5rem;
   display: none;
   height: 555px;
   overflow: scroll;
-  margin-left:25rem;
+  margin-left:30%;
   font-size: 12px;
+  text-align:center;
 }
 .smclassifyBox.active {
   display: block;
@@ -126,6 +126,10 @@ export default {
 .smclassifyBox>img {
   width: 15.5rem;
   height: 5.5rem;
+}
+.smclassifyBox h4{
+  text-align: left;
+  margin-left:5%;
 }
 /* .smclassifyBox>img[lazy=loading] {
   width: 15.5rem;
