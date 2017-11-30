@@ -12,7 +12,7 @@
       </div>
       <div class="childPrice">
         <p>
-          <span>{{childproduct.name+" - "+childproduct.introduces}}</span>
+          <span>{{childproduct.name+" - "+childproduct.introduce}}</span>
           <span class="star"></span>
           <span class="prices">{{"￥"+ childproduct.price}}</span>
         </p>
@@ -213,7 +213,7 @@ export default {
   border-bottom: 8px solid #f5f5f5;
 }
 .introduce tr td:first-of-type{
-  width:12%;
+  width:15%;
   color:#333;
   padding-left:0.5rem;
 }

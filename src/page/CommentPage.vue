@@ -10,8 +10,11 @@
     </div>
     <div class="haveProduce" v-show="comments.length!==0">
       <ul>
-        <li>
-          
+        <li v-for="(item,index) in comments" :key="index">
+          <img :src="item.img">
+          <div class="commentlist">
+            <p>{{item.commentMain}}</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -26,6 +29,9 @@ export default {
   computed: {
     comments() {
       return this.$store.state.comments;
+    },
+    childProduct () {
+      return this.$store.state.childProduct
     }
   }
 };
@@ -52,6 +58,26 @@ export default {
   border-radius: 50%;
   overflow: hidden;
   margin: 10% 13%;
+}
+.haveProduce li{
+  line-height: 3rem;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+  padding:1rem;
+}
+.haveProduce li:after{
+  display: block;
+  content: "";
+  clear: both;
+
+}
+.haveProduce li .commentlist p{
+  line-height: 1rem;
+}
+.haveProduce li>img{
+  width:3rem;
+  float: left;
+  margin-right:1rem;
 }
 </style>
 
